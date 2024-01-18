@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.6"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6"/>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <None Remove="flecha_izq.png" />
+      <AvaloniaResource Include="flecha_izq.png" />
+      <None Remove="flecha_der.png" />
+      <AvaloniaResource Include="flecha_der.png" />
+      <None Remove="img_crear.png" />
+      <AvaloniaResource Include="img_crear.png" />
+      <None Remove="img_eliminar.png" />
+      <AvaloniaResource Include="img_eliminar.png" />
+      <None Remove="img_modificar.png" />
+      <AvaloniaResource Include="img_modificar.png" />
+      <None Remove="img_ajustes.png" />
+      <AvaloniaResource Include="img_ajustes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="LogosCoches\BMW.png" />
+      <AvaloniaResource Include="LogosCoches\BMW.png" />
+      <None Remove="LogosCoches\Mercedes.png" />
+      <AvaloniaResource Include="LogosCoches\Mercedes.png" />
+      <None Remove="LogosCoches\Nissan.png" />
+      <AvaloniaResource Include="LogosCoches\Nissan.png" />
+      <None Remove="LogosCoches\Toyota.png" />
+      <AvaloniaResource Include="LogosCoches\Toyota.png" />
+      <None Remove="LogosCoches\Volkswagen.png" />
+      <AvaloniaResource Include="LogosCoches\Volkswagen.png" />
+      <None Remove="img_guardar.png" />
+      <AvaloniaResource Include="img_guardar.png" />
+      <None Remove="img_cargar.png" />
+      <AvaloniaResource Include="img_cargar.png" />
+      <None Remove="img_aceptar.png" />
+      <AvaloniaResource Include="img_aceptar.png" />
+      <None Remove="img_cancelar.png" />
+      <AvaloniaResource Include="img_cancelar.png" />
+    </ItemGroup>
+</Project>

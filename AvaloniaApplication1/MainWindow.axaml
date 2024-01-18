@@ -1,0 +1,125 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1048" d:DesignHeight="630"
+        x:Class="AvaloniaApplication1.MainWindow"
+        Title="FichaTecnicaDeCoches"
+        Width="1048" Height="630"
+        Background="Aqua">
+        
+        <!-- Contenido de la ventana -->
+        <StackPanel>
+            <!-- Label que contiene el titulo de la aplicacion -->
+            <Label Name="lblTitulo" HorizontalAlignment="Center" Margin="5,50,5,20" FontSize="50" FontFamily="Stencil" Foreground="Black">FICHA TECNICA DE COCHES</Label>
+            <!-- Grid que contiene todos los labels y textboxes relacionados con los datos de los coches -->
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                <!-- Marca -->
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Label Name="lblMarca" Margin="60,15" FontSize="20" Foreground="Black" FontFamily="Courier New">Marca: </Label>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <TextBox Name="tbMarca" Margin="5,15" Width="120"></TextBox>
+                </Grid>
+                
+                <!-- Modelo -->
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Label Name="lblModelo" Margin="60,15" FontSize="20" Foreground="Black" FontFamily="Courier New">Modelo: </Label>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <TextBox Name="tbModelo" Margin="5,15"></TextBox>
+                </Grid>
+                
+                <!-- Precio -->
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Label Name="lblPrecio" Margin="60,15" FontSize="20" Foreground="Black" FontFamily="Courier New">Precio: </Label>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <TextBox Name="tbPrecio" Margin="5,15"></TextBox>
+                </Grid>
+                
+                <!-- Gama -->
+                <Grid Grid.Row="3" Grid.Column="0">
+                    <Label Name="lblGama" Margin="60,15" FontSize="20" Foreground="Black" FontFamily="Courier New">Gama: </Label>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <TextBox Name="tbGama" Margin="5,15"></TextBox>
+                </Grid>
+                
+                <!-- Clase -->
+                <Grid Grid.Row="4" Grid.Column="0">
+                    <Label Name="lblClase" Margin="60,15" FontSize="20" Foreground="Black" FontFamily="Courier New">Clase: </Label>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="1">
+                    <TextBox Name="tbClase" Margin="5,15"></TextBox>
+                </Grid>
+                
+                <!-- Motor -->
+                <Grid Grid.Row="5" Grid.Column="0">
+                    <Label Name="lblMotor" Margin="60,15" FontSize="20" Foreground="Black" FontFamily="Courier New">Tipo de motor: </Label>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="1">
+                    <TextBox Name="tbMotor" Margin="5,15"></TextBox>
+                </Grid>
+            </Grid>
+            
+            <!-- Grid que contiene los botones Crear, Eliminar y Modificar -->
+            <Grid Grid.Row="7" Grid.ColumnSpan="7" Margin="55,15" ColumnDefinitions="Auto, Auto, Auto">
+                <!-- Crear -->
+                <Button Grid.Column="0" Name="btnCrear" Margin="20" Background="Aqua" Click="BtnCrear_OnClick">
+                    <Image Source="img_crear.png" Width="60" Height="60"></Image>
+                </Button>
+                
+                <!-- Eliminar -->
+                <Button Grid.Column="1" Name="btnEliminar" Margin="20" Background="Aqua" Click="BtnEliminar_OnClick">
+                    <Image Source="img_eliminar.png" Width="60" Height="60"></Image>
+                </Button>
+                
+                <!-- Modificar -->
+                <Button Grid.Column="2" Name="btnModificar" Margin="20" Background="Aqua" Click="BtnModificar_OnClick">
+                    <Image Source="img_modificar.png" Width="60" Height="60"></Image>
+                </Button>
+            </Grid>
+            
+            <!-- Grid que contiene los botones Anterior y Siguiente -->
+            <Grid Grid.Row="7" Grid.ColumnSpan="7" Margin="563,-200,5,5" ColumnDefinitions="Auto, Auto">
+                <!-- Anterior -->
+                <Button Grid.Column="0" Name="btnAnterior" Margin="50" Background="Aqua" Click="BtnAnterior_OnClick">
+                    <Image Source="flecha_izq.png" Width="70" Height="70"></Image>
+                </Button>
+                
+                <!-- Siguiente -->
+                <Button Grid.Column="1" Name="btnSiguiente" Margin="50" Background="Aqua" Click="BtnSiguiente_OnClick">
+                    <Image Source="flecha_der.png" Width="70" Height="70"></Image>
+                </Button>
+            </Grid>
+            
+            <!-- Grid que contiene el elemento Image donde se mostraran las imagenes -->
+            <Grid Grid.Row="8" ColumnDefinitions="Auto" Margin="600,-700,5,5">
+                <Image Name="imgLogo" Width="300" Height="300"></Image>
+            </Grid>
+            
+            <!-- Grid que contiene el label donde se mostraran los esloganes dependiendo de la imagen cargada -->
+            <Grid Grid.Row="9" ColumnDefinitions="Auto" Margin="550,-55,5,5">
+                <Label Name="lblEslogan" FontSize="20" FontFamily="Courier New" FontStyle="Italic" Foreground="Black">Eslogan: </Label>
+            </Grid>
+            
+            <!-- Grid que contiene los botones Guardar y Cargar -->
+            <Grid Grid.Row="7" Grid.ColumnSpan="7" Margin="0, -1180, 5,5 " ColumnDefinitions="Auto, Auto">
+                <!-- Guardar -->
+                <Button Grid.Column="0" Name="btnGuardar" Margin="20,5,5,5" Background="Aqua" Click="BtnGuardar_OnClick">
+                    <Image Source="img_guardar.png" Width="30" Height="30"></Image>
+                </Button>
+                
+                <!-- Cargar -->
+                <Button Grid.Column="0" Name="btnCargar" Margin="70,5,5,5" Background="Aqua" Click="BtnCargar_OnClick">
+                    <Image Source="img_cargar.png" Width="30" Height="30"></Image>
+                </Button>
+            </Grid>
+            
+            <!-- Grid que contiene el label donde se mostraran cuantos registros se han creado y/o cargados -->
+            <Grid Grid.Row="9" ColumnDefinitions="Auto" Margin="870,-620,5,5">
+                <Label Name="lblTotalRegistros" FontSize="20" FontFamily="Courier New" Foreground="Black">Registros: 0</Label>
+            </Grid>
+        </StackPanel>
+</Window>
